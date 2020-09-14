@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1600087261 source:/home/emmet/Desktop/codeblocks/tictactoe_c/main.c
+	<stdio.h>
+	<stdlib.h>
+	"tictactoe.h"
+
+1600085280 /home/emmet/Desktop/codeblocks/tictactoe_c/tictactoe.h
+	<string.h>
+	<stdbool.h>
+	<stdlib.h>
+	<ctype.h>
+	"player.h"
+
+1599841188 /home/emmet/Desktop/codeblocks/tictactoe_c/player.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<ctype.h>
+
