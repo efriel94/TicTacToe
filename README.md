@@ -1,6 +1,13 @@
-# TicTacToe
-<<<<<<< HEAD
-C program demonstrating a basic tictactoe game
-=======
-C program demonstrating a basic tictactoe terminal game programmed in codeblocks for the purposes of brushing up in the language. Approached the design using pointers and structs when possible although it may not have been necessary, the idea was to sharpen up on those concepts. 
->>>>>>> d741cfd90ab5058933d6e0207412ea7d53f500c2
+# Tic Tac Toe game
+C program demonstrating a basic tictactoe terminal game with the idea of making it error free. Will be adding features time to time.
+
+## Build
+Compiled and built using CMake
+```bash
+sudo apt-get install cmake gcc # or clang
+git clone https://github.com/efriel94/TicTacToe.git
+cd TicTacToe/
+mkdir build
+cmake ..
+make
+./tictactoe
