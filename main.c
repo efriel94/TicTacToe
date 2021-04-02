@@ -10,11 +10,12 @@
 int main()
 {
     int player_turn = 1;
+    int count = 0;
     int *ptr_player = &player_turn;
 
     print_title();
     char board[ROWS][COLS] = {
-        {'1' , '2', '3'},
+        {'X' , 'X', '3'},
         {'4' , '5', '6'},
         {'7' , '8', '9'}
     };
@@ -23,8 +24,22 @@ int main()
 
     //loop until win or draw
     choose_position(player_turn, ptr_board);
+    ++count;
     system("clear");
     print_board(board);
+    int result = win_draw(ptr_board,count);
+    switch (result) {
+      case 1:
+         fprintf(stdout, "Gamed Ended. Player %d won!\n\n", player_turn);
+         return EXIT_SUCCESS;
+         break;
+      case 2:
+         fprintf(stdout, "Gamed is a draw!\n\n");
+         return EXIT_SUCCESS;
+         break;
+      default:
+         break;
+    }
     change_player(ptr_player);
     
     choose_position(player_turn, ptr_board);

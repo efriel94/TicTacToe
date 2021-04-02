@@ -143,3 +143,52 @@ void change_player(int *player_turn) {
    else 
       *player_turn = 1;
 }
+
+int win_draw(char *board, int count)
+{
+   //translate index to numbers
+  char num1 = *(board + 0);
+  char num2 = *(board + 1);
+  char num3 = *(board + 2);
+  char num4 = *(board + 3);
+  char num5 = *(board + 4);
+  char num6 = *(board + 5);
+  char num7 = *(board + 6);
+  char num8 = *(board + 7);
+  char num9 = *(board + 8);
+  
+
+ //check horizontal
+  if((num1 == num2) && (num2 == num3)) {
+     return 1;
+  } else if ((num4 == num5) && (num5 == num6)) {
+     return 1;
+  } else if ((num7 == num8) && (num8 == num9)) {
+     return 1;
+  }
+
+  //check vertical
+  else if((num1 == num4) && (num4 == num7)) {
+   return 1;
+  } else if((num2 == num5) && (num5 == num8)) {
+    return 1;
+  } else if((num3 == num6) && (num6 == num9)) {
+    return 1;
+  }
+
+  //check diagonal
+  else if((num1 == num5) && (num5 == num9)) {
+    return 1;
+  } else if((num3 == num5) && (num5 == num7)) {
+    return 1;
+  }
+
+  //check if all spaces are filled
+  else if (count == 9) {
+     return 2;
+  }
+
+  else {
+     return 0;
+  }
+}
