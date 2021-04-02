@@ -78,8 +78,6 @@ _Bool check_position(int player_turn, int position, char *board)
     int j = 0;
 
     int index_position = position - 1;
-    fprintf(stdout,"%d", index_position);
-    int columns = 3; //strating at base zero
     if (board[index_position] != 'X')
         if (board[index_position] != 'O')
             if (player_turn == 1) {
@@ -126,20 +124,15 @@ void choose_position(unsigned int player_turn, char *board)
         { 
             _Bool result = check_position(player_turn, position_atoi, board);
             if (result)
-                loop_state = 0;
-            
-            // loop_state = 0;
-            // fprintf(stdout, "%c", board[position_atoi - 1]);
-            // if (board[position_atoi - 1] == '1')
-            // {
-            //     *(board + (0 * 3 + 0)) = 'X';
-            //     fprintf(stdout,"Found it.");
-            // } else {
-            //     fprintf(stdout,"Nope");
-            // }
-            
+                loop_state = 0;      
         } else {
             fprintf(stdout,"Please choose a position on the board to play\n");
         }
     }
+}
+
+void print_player(int *player)
+{
+    int temp = *player;
+    fprintf(stdout,"Player turn is %d\n", temp);
 }

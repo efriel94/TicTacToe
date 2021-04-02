@@ -6,9 +6,6 @@
 #define ROWS  3
 #define COLS  3
 
-void choose_position(unsigned int player_turn, char *board);
-void print_player(int *player);
-
 
 int main()
 {
@@ -29,18 +26,7 @@ int main()
     print_player(ptr_player);
     print_board(board);
 
-
-    
-    
     ptr_board = NULL;
 
     return EXIT_SUCCESS;
-}
-
-
-
-void print_player(int *player)
-{
-    int temp = *player;
-    fprintf(stdout,"Player turn is %d\n", temp);
 }
