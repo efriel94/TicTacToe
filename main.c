@@ -23,8 +23,14 @@ int main()
 
     //loop until win or draw
     choose_position(player_turn, ptr_board);
-    print_player(ptr_player);
+    system("clear");
     print_board(board);
+    change_player(ptr_player);
+    
+    choose_position(player_turn, ptr_board);
+    system("clear");
+    print_board(board);
+    change_player(ptr_player);
 
     ptr_board = NULL;
 

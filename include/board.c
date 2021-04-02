@@ -136,3 +136,10 @@ void print_player(int *player)
     int temp = *player;
     fprintf(stdout,"Player turn is %d\n", temp);
 }
+
+void change_player(int *player_turn) {
+   if (*player_turn == 1)
+      *player_turn = 2;
+   else 
+      *player_turn = 1;
+}
