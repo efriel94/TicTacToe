@@ -78,8 +78,6 @@ _Bool check_position(int player_turn, int position, char *board)
     int j = 0;
 
     int index_position = position - 1;
-    fprintf(stdout,"%d", index_position);
-    int columns = 3; //strating at base zero
     if (board[index_position] != 'X')
         if (board[index_position] != 'O')
             if (player_turn == 1) {
@@ -91,11 +89,11 @@ _Bool check_position(int player_turn, int position, char *board)
                 return 1;
         }
         else {
-            fprintf(stdout,"Position already filled. Choose another position");
+            //fprintf(stdout,"Position already filled. Choose another position");
             return 0;
         }
     else {
-        fprintf(stdout,"Position already filled. Choose another position");
+        //fprintf(stdout,"Position already filled. Choose another position");
         return 0;
     }
 }
@@ -120,26 +118,77 @@ void choose_position(unsigned int player_turn, char *board)
                 }
         }
         int position_atoi = atoi(position);
-        fprintf(stdout,"Position: %d\n", position_atoi);
+        //fprintf(stdout,"Position: %d\n", position_atoi);
         //loop_state = 0;
         if (position_atoi > 0 && position_atoi <= 9)
         { 
             _Bool result = check_position(player_turn, position_atoi, board);
             if (result)
-                loop_state = 0;
-            
-            // loop_state = 0;
-            // fprintf(stdout, "%c", board[position_atoi - 1]);
-            // if (board[position_atoi - 1] == '1')
-            // {
-            //     *(board + (0 * 3 + 0)) = 'X';
-            //     fprintf(stdout,"Found it.");
-            // } else {
-            //     fprintf(stdout,"Nope");
-            // }
-            
+                loop_state = 0;      
         } else {
             fprintf(stdout,"Please choose a position on the board to play\n");
         }
     }
+}
+
+void print_player(int *player)
+{
+    int temp = *player;
+    fprintf(stdout,"Player turn is %d\n", temp);
+}
+
+void change_player(int *player_turn) {
+   if (*player_turn == 1)
+      *player_turn = 2;
+   else 
+      *player_turn = 1;
+}
+
+int win_draw(char *board, int count)
+{
+   //translate index to numbers
+  char num1 = *(board + 0);
+  char num2 = *(board + 1);
+  char num3 = *(board + 2);
+  char num4 = *(board + 3);
+  char num5 = *(board + 4);
+  char num6 = *(board + 5);
+  char num7 = *(board + 6);
+  char num8 = *(board + 7);
+  char num9 = *(board + 8);
+  
+
+ //check horizontal
+  if((num1 == num2) && (num2 == num3)) {
+     return 1;
+  } else if ((num4 == num5) && (num5 == num6)) {
+     return 1;
+  } else if ((num7 == num8) && (num8 == num9)) {
+     return 1;
+  }
+
+  //check vertical
+  else if((num1 == num4) && (num4 == num7)) {
+   return 1;
+  } else if((num2 == num5) && (num5 == num8)) {
+    return 1;
+  } else if((num3 == num6) && (num6 == num9)) {
+    return 1;
+  }
+
+  //check diagonal
+  else if((num1 == num5) && (num5 == num9)) {
+    return 1;
+  } else if((num3 == num5) && (num5 == num7)) {
+    return 1;
+  }
+
+  //check if all spaces are filled
+  else if (count == 9) {
+     return 2;
+  }
+
+  else {
+     return 0;
+  }
 }
