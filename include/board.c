@@ -89,11 +89,11 @@ _Bool check_position(int player_turn, int position, char *board)
                 return 1;
         }
         else {
-            fprintf(stdout,"Position already filled. Choose another position");
+            //fprintf(stdout,"Position already filled. Choose another position");
             return 0;
         }
     else {
-        fprintf(stdout,"Position already filled. Choose another position");
+        //fprintf(stdout,"Position already filled. Choose another position");
         return 0;
     }
 }
@@ -118,7 +118,7 @@ void choose_position(unsigned int player_turn, char *board)
                 }
         }
         int position_atoi = atoi(position);
-        fprintf(stdout,"Position: %d\n", position_atoi);
+        //fprintf(stdout,"Position: %d\n", position_atoi);
         //loop_state = 0;
         if (position_atoi > 0 && position_atoi <= 9)
         { 
