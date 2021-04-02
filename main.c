@@ -3,8 +3,8 @@
 #include <string.h>
 #include "board.h"
 
-#define ROWS  3
-#define COLS  3
+#define ROWS 3
+#define COLS 3
 
 
 int main()
