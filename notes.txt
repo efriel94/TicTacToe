@@ -1,0 +1,2 @@
+//loop over 2d array in c via pointers
+https://dyclassroom.com/c/c-pointers-and-two-dimensional-array
