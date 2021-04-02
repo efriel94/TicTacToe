@@ -107,6 +107,11 @@ int main(void)
 }
 
 
+<<<<<<< HEAD
+=======
+#define ROWS 3
+#define COLS 3
+>>>>>>> development
 
 =======
 
@@ -156,4 +161,7 @@ int main()
 
     return EXIT_SUCCESS;
 }
+<<<<<<< HEAD
+>>>>>>> development
+=======
 >>>>>>> development
