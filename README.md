@@ -1,5 +1,5 @@
 # Tic Tac Toe game
-C program demonstrating a basic tictactoe terminal game with the idea of making it error free. Will be adding features time to time.
+C program demonstrating a basic tictactoe terminal game. Will be adding more features from time to time.
 
 ## Build
 Compiled and built using CMake
