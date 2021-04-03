@@ -9,8 +9,8 @@
 int main()
 {
     int player_turn = 1;
-    int count = 0;
     int *ptr_player = &player_turn;
+    int count = 0; //keeping track of positions filled within the board
     _Bool game = 0;
 
     print_title();
@@ -26,7 +26,7 @@ int main()
     {
        print_board(board);
        choose_position(player_turn, ptr_board);
-       ++count;
+       ++count; //
        system("clear");
        int result = win_draw(ptr_board,count);
        
@@ -35,12 +35,12 @@ int main()
           case 1:
             fprintf(stdout, "Gamed Ended. Player %d won!\n\n", player_turn);
             print_board(board);
-            return 1;
+            game = 1;
             break;
          case 2:
             fprintf(stdout, "Gamed is a draw!\n\n");
             print_board(board);
-            return 1;
+            game = 1;
             break;
          default:
             change_player(ptr_player);
@@ -49,6 +49,5 @@ int main()
     }
     
     ptr_board = NULL;
-
     return EXIT_SUCCESS;
 }
