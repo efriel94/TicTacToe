@@ -49,5 +49,6 @@ int main()
     }
     
     ptr_board = NULL;
+    ptr_player = NULL;
     return EXIT_SUCCESS;
 }
