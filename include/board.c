@@ -192,3 +192,13 @@ int win_draw(char *board, int count)
      return 0;
   }
 }
+
+//copy array to another array
+void copy_arr(char (*src)[3], char(*dest)[3], const int size)
+{
+    for(int i=0; i < size; i++) {
+        for (int j=0; j < size; j++) {
+            dest[i][j] = src[i][j];
+        }
+    }
+}
