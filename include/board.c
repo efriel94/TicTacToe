@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 void print_title()
 {
@@ -191,4 +192,48 @@ int win_draw(char *board, int count)
   else {
      return 0;
   }
+}
+
+//copy array to another array
+void copy_arr(char (*src)[3], char(*dest)[3], int size)
+{
+    for(int i=0; i < size; i++) {
+        for (int j=0; j < size; j++) {
+            dest[i][j] = src[i][j];
+        }
+    }
+}
+
+bool play_again()
+{
+    char option[2];
+    bool status = true;
+    fprintf(stdout, "Would you like to play again[y/n]: ");
+    char *p = fgets(option,2,stdin);
+    if(p!=NULL)
+    {
+        //fprintf(stdout,"%c\n", *ptr_option);
+        size_t last = strlen(option) - 1;
+        if (option[last] == '\n')
+        {
+            option[last] = '\0';
+        } else {
+            scanf("%*[^\n]");
+            scanf("%*c");
+        }
+        if (strncmp(option,"y",1) == 0)
+        {
+            status = false;
+        } else if (strncmp(option,"n",1) == 0){
+            status = true;
+        } else {
+            status = true;
+        }
+    } else {
+        fprintf(stderr,"Error reading in input");
+        status = true;
+    }
+
+    p = NULL;
+    return status;
 }
